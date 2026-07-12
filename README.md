@@ -10,13 +10,11 @@ Custom [ESPHome](https://esphome.io) external components used by the
   exceeds the stock `http_request` limits).
 - **`decoded_image`** — a `runtime_image` shim exposing a fast JPEG → 8-bit
   grayscale decode path (`decode_jpeg_grayscale`) for on-device poster decoding.
-- **`image_server`** — serves any `image::Image` source as an 8-bit grayscale
-  BMP over plain HTTP (`GET /image.bmp`) for full-resolution browser preview.
 
 ## Usage
 
 ```yaml
 external_components:
   - source: github://FuNK3Y/esphome-components@main
-    components: [async_http, decoded_image, image_server]
+    components: [async_http, decoded_image]
 ```
