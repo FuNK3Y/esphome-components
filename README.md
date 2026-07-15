@@ -1,7 +1,7 @@
 # esphome-components
 
 Custom [ESPHome](https://esphome.io) external components used by the
-`esp-calendair` posters (AtomS3R / ESP32-P4).
+`esp` posters (Seeed E1003).
 
 ## Components
 
