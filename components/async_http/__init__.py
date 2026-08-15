@@ -72,7 +72,11 @@ ACTION_SCHEMA = cv.Schema(
 )
 
 
-@automation.register_action("async_http.request", RequestAction, ACTION_SCHEMA)
+# synchronous=True: play() hands the request to the worker and returns —
+# play_next_ is never deferred; completion fires the triggers instead.
+@automation.register_action(
+    "async_http.request", RequestAction, ACTION_SCHEMA, synchronous=True
+)
 async def request_action_to_code(config, action_id, template_arg, args):
     paren = await cg.get_variable(config[CONF_ID])
     var = cg.new_Pvariable(action_id, template_arg, paren)
